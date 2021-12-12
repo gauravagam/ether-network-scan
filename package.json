@@ -1,0 +1,27 @@
+{
+  "name": "ether-network-scan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravagam/ether-network-scan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravagam/ether-network-scan/issues"
+  },
+  "homepage": "https://github.com/gauravagam/ether-network-scan#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "ethers": "^5.5.2",
+    "moment": "^2.29.1"
+  }
+}
