@@ -17,7 +17,6 @@ window.onload = async function () {
     if (response.data.error) {
         console.log(JSON.stringify(response.data.error));
     } else {
-        console.log(JSON.stringify(response.data.result));
         const block = response.data.result;
         let tbody = $("#tbody");
         let tr = $("<tr></tr>").appendTo(tbody);
