@@ -56,7 +56,11 @@ window.onload = async function () {
         tr.append(`<td>${ethers.utils.formatEther(Number(block.baseFeePerGas)*Number(block.gasUsed))} Ether</td>`);
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Extra Data:</th>");
-        tr.append(`<td>${ethers.utils.toUtf8String(block.extraData)} (Hex: ${block.extraData})</td>`);
+        try{
+            tr.append(`<td>${ethers.utils.toUtf8String(block.extraData,ethers.utils.Utf8ErrorFuncs.replace)} (Hex: ${block.extraData})</td>`);
+        } catch(e){
+            console.error(e);
+        }
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Hash:</th>");
         tr.append(`<td>${block.hash})</td>`);
