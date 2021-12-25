@@ -1,4 +1,3 @@
-console.log('hi');
 import axios from 'axios';
 import { BigNumber, ethers } from 'ethers';
 import { INFURA_URL } from './config';
