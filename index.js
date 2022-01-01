@@ -10,11 +10,8 @@ window.onload = async function(){
         let tbody = $("#tbody");
         let tr = $("<tr></tr>").appendTo(tbody)
         const blockTime = moment(block.timestamp*1000);
-        const currentTime = moment();
-        const diff = currentTime.diff(blockTime);
-        const age = diff<60000?`${currentTime.diff(blockTime,'seconds')} secs ago`:`${currentTime.diff(blockTime,'minutes')} mins ago`;
         tr.append(`<td><a href='/block-details.html?blockNumber=${block.number}'>${block.number}</td>`);
-        tr.append(`<td>${age}</td>`);
+        tr.append(`<td>${blockTime.fromNow()}</td>`);
         tr.append(`<td>${block.transactions.length}</td>`);
         tr.append(`<td>${block.miner}</td>`);
         tr.append(`<td>${Number(block.gasUsed).toLocaleString()}<span class='text-muted'>(${Number(Number(block.gasUsed)/Number(block.gasLimit)*100).toFixed(2)}%)</span></td>`);
