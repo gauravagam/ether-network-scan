@@ -4,7 +4,7 @@ import { INFURA_URL } from './config';
 
 window.onload = async function(){
     let blockNumber = new URLSearchParams(window.location.search).get("blockNumber");
-    $("#block-no").attr("href",`/txs.html?blockNumber=${blockNumber}`);
+    $("#block-no").attr("href",`/block-details.html?blockNumber=${blockNumber}`);
     $("#block-no").html(blockNumber);
     let hexBlockNumber = ethers.utils.hexValue(Number(blockNumber));
     const response = await axios.post(INFURA_URL, {
