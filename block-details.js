@@ -24,11 +24,10 @@ window.onload = async function () {
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Timestamp</th>")
         const blockTime = moment(block.timestamp*1000);
-        console.log('age ',blockTime.fromNow(),blockTime.utc().format("MMM-DD-YYYY LTS"));
         tr.append(`<td>${blockTime.fromNow()} (${blockTime.utc().format("MMM-DD-YYYY LTS")} +UTC)</td>`)
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Transactions: </th>");
-        tr.append(`<td>${block.transactions.length}</td>`);
+        tr.append(`<td><a href='/txs.html?blockNumber=${blockNumber}'> ${block.transactions.length} transactions</a></td>`);
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Mined by:</th>");
         tr.append(`<td>${block.miner}</td>`);
@@ -46,7 +45,7 @@ window.onload = async function () {
         tr.append(`<td>${Number(block.gasUsed).toLocaleString()} (${Number(Number(block.gasUsed)/Number(block.gasLimit)*100).toFixed(2)}%)</td>`);
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Gas Limit:</th>");
-        tr.append(`<td>${block.gasLimit}/<td>`);
+        tr.append(`<td>${Number(block.gasLimit).toLocaleString()}</td>`);
         tr = $("<tr></tr>").appendTo(tbody);
         tr.append("<th>Base Fee Per Gas:</th>");
         tr.append(`<td>${Number(block.baseFeePerGas)} wei (${ethers.utils.formatUnits(BigNumber.from(block.baseFeePerGas),"gwei")} Gwei)</td>`);
